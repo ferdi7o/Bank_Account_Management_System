@@ -26,6 +26,8 @@ def display_menu():
 
 def create_account():
     """Create a new account."""
+    user_name = input("Your Name: ")
+    account_holders.append(user_name)
     pass  # TODO: Add logic
 
 def deposit():
@@ -91,7 +93,7 @@ def main():
         elif choice == 10:
             identify_card_type()
         elif choice == 0:
-            print("Goodbye! 👋")
+            print(f"Goodbye! 👋" )
             break
         else:
             print("❌ Invalid choice. Try again!")
