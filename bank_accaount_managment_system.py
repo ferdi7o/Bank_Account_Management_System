@@ -11,7 +11,7 @@ INTEREST_RATE = 0.03
 
 def display_menu():
     """Main menu for banking system."""
-    print("\n🌟 Welcome to Enhanced Bank System 🌟")
+    print("\n🌟 Welcome to World Bank System 🌟")
     print("1️⃣ Create Account")
     print("2️⃣ Deposit Money")
     print("3️⃣ Withdraw Money")
@@ -28,7 +28,12 @@ def create_account():
     """Create a new account."""
     user_name = input("Your Name: ")
     account_holders.append(user_name)
-    pass  # TODO: Add logic
+
+    for user in account_holders:
+        if user["username"] == user_name:
+            print("This name is already taken!\nPlease try again with a different name.")
+            break
+
 
 def deposit():
     """Deposit money into an account."""
