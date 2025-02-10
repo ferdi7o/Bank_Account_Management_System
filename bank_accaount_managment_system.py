@@ -5,6 +5,7 @@ account_holders = []  # Account names
 balances = []         # Account balances
 transaction_histories = []  # Account transaction logs
 loans = []            # Account loan details
+account_index = 0
 
 MAX_LOAN_AMOUNT = 10000
 INTEREST_RATE = 0.03
@@ -27,16 +28,23 @@ def display_menu():
 def create_account():
     """Create a new account."""
     user_name = input("Your Name: ")
-    account_holders.append(user_name)
 
     for user in account_holders:
-        if user["username"] == user_name:
-            print("This name is already taken!\nPlease try again with a different name.")
-            break
+        if user.lower() == user_name.lower():
+            print("======== This name is already taken! ========"
+                  "\n======== Please try again with a different name. ========")
+            return
+
+    account_holders.append(user_name)
+    balances.append(0)
+    print(f"Hello {user_name}, please select the action you want to perform.")
+    account_index = account_holders.index(user_name)
+    print(account_holders)
 
 
 def deposit():
     """Deposit money into an account."""
+    print(f'======== Your balance: {balances[account_index]} ========')
     pass  # TODO: Add logic
 
 def withdraw():
