@@ -57,7 +57,9 @@ def check_balance():
 
 def list_accounts():
     """List all account holders and details."""
-    pass  # TODO: Add logic
+    for index in  range(len(account_holders)):
+
+        print(f'{index + 1}: {account_holders[index]}')
 
 def transfer_funds():
     """Transfer funds between two accounts."""
