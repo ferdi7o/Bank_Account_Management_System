@@ -44,16 +44,27 @@ def create_account():
 
 def deposit():
     """Deposit money into an account."""
-    print(f'======== Your balance: {balances[account_index]} ========')
-    pass  # TODO: Add logic
+    deposit_money = int(input("Please enter an integer: "))
+    balances[account_index] += deposit_money
+    print(f'The amount you loaded into your account {deposit_money}\n'
+          f'Total amount in your account {balances[account_index] }')
+
 
 def withdraw():
     """Withdraw money from an account."""
-    pass  # TODO: Add logic
+    withdraw_money = int(input("Please enter an integer: "))
+    if withdraw_money > balances[account_index]:
+        print(f'There is not enough money in your account!!!\n'
+              f'Try a new amount.')
+        withdraw()
+    else:
+        balances[account_index]  -= withdraw_money
+        print(f"The amount of money you withdraw {withdraw_money}\n"
+              f"The amount of money remaining in your account {balances[account_index]}")
 
 def check_balance():
     """Check balance of an account."""
-    pass  # TODO: Add logic
+    print(f'======== Your balance: {balances[account_index]} ========')
 
 def list_accounts():
     """List all account holders and details."""
