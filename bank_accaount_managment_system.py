@@ -37,6 +37,7 @@ def create_account():
 
     account_holders.append(user_name)
     balances.append(0)
+    loans.append(0)
     print(f"Hello {user_name}, please select the action you want to perform.")
     account_index = account_holders.index(user_name)
     print(account_holders)
@@ -82,7 +83,9 @@ def view_transaction_history():
 
 def apply_for_loan():
     """Allow user to apply for a loan."""
-    pass  # TODO: Add logic
+    loan = int(input())
+    loans[account_index] -= loan
+    balances[account_index] += loan
 
 def repay_loan():
     """Allow user to repay a loan."""
