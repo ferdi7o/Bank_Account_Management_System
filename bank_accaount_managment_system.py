@@ -89,7 +89,20 @@ def apply_for_loan():
 
 def repay_loan():
     """Allow user to repay a loan."""
-    pass  # TODO: Add logic
+    print(f"You have {loans[account_index]} to pay!")
+    choise = input("Will you pay Y / N: ")
+    if choise.lower() == "y":
+        money = int(input())
+        if money > abs(loans[account_index]):
+            print("The amount you have entered is more than the debt")
+        else:
+            loans[account_index] += money
+            print(f"Your loans to pay is {loans[account_index]}")
+    elif choise.lower() == "n":
+        pass
+    else:
+        print("Invalid text")
+
 
 def identify_card_type():
     """Identify type of credit card."""
